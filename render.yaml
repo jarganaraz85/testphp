@@ -1,0 +1,4 @@
+services:
+  - name: php-app
+    buildCommand: docker build -t php-app .
+    startCommand: docker run -p 8080:80 php-app
