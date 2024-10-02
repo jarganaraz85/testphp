@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $received_data = json_decode($raw_data, true);
 
     // Return the received data as the response
+    var_dump($received_data);
     echo json_encode($received_data);
 } else {
     // Return an error message for unsupported request methods
