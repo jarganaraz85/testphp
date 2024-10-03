@@ -1,5 +1,5 @@
 <?php
-include('pyrus.php');
+include(__DIR__ . '/pyrus.php');
 // Set the appropriate headers for JSON response
 header("Content-Type: application/json");
 
