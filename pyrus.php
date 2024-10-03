@@ -1,7 +1,5 @@
 <?php
 
-namespace Pyrus\utils;
-
 class Pyrus {
   private $credentials;
   private $apiUrl;
@@ -216,7 +214,7 @@ class Pyrus {
     curl_setopt_array($curl, $opts);
     $response = curl_exec($curl);
     if ($response === false || curl_errno($curl)) {
-      $errorMsg = "Could not execute the curl api request.";
+      $errorMsg = "Could not execute the curl api request: " . $endPoint ." - ". $method . " parans: " . json_encode($params) . " headers : " . json_encode($headers);
       //$this->logger->error("$errorMsg [" . curl_errno($curl) . " " . curl_error($curl) . "]");
       curl_close($curl);
       throw new \Exception($errorMsg);
