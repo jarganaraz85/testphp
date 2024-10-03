@@ -1,5 +1,5 @@
 <?php
-use Pyrus\utils\Pyrus;
+include('pyrus.php');
 // Set the appropriate headers for JSON response
 header("Content-Type: application/json");
 
@@ -20,16 +20,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pyrus = new Pyrus($pyrusCredentials);
     try {
       // Call the getFieldByName method
-      $fieldStatus = $pyrus->getFieldByName(1452357, "ECI Invoice Export Status");
+      $fieldStatus = $pyrus->getFieldByName(1452357, "ECI Integration (Error Message)");
 
       // Call the setPyrusWorkflowApprovalsChoice method
       setPyrusWorkflowApprovalsChoice([$received_data["task"]], "approved", [
           $fieldStatus['id'] => "CFR Test",
       ], $pyrus);
       // Return the received data as the response    
+      
     //echo json_encode($received_data);
     } catch (Exception $e) {
-      http_response_code(500); // Internal Server Error
+      http_response_code(501); // Internal Server Error
       echo json_encode(array("error" => $e->getMessage()));
     }
 } else {
