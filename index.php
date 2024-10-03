@@ -14,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Create an instance of the Pyrus class
 
     $pyrusCredentials =    [
-      'login' => "ecitestadm@outlook.com",
-      'security_key' => "xYUsC~6Sf7N4JfbmPBIT7-nIWRKavULwDMiPHxG81qw0R6aBxJ1mIuEnXicSIPiTWQRwgJo-2IIYDjvp0HNOzeR8W1A~cFtD"
+      'login' => "bot@e5b81bc6-7e03-43bc-87a1-4c82a26732fc",
+      'security_key' => "Sf4EKtPhMRpNXnyWq7XBj3oUpb9oV0pMk-IJKUL-f--ytJlVH1pMU8bd7IXtrAZNZNaWey279XwP6A6mzlpKpNMPSeA4HCto"
     ];
     $pyrus = new Pyrus($pyrusCredentials);
     try {
